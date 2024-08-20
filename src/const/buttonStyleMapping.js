@@ -1,5 +1,5 @@
 //Components
-import StyledButton, { DigitButton, PrimaryButton } from "~components/Button/Button";
+import  { StyledButton, DigitButton, PrimaryButton } from "~components/Button/Button";
 
 export const buttonMapping = {
     '=': PrimaryButton,

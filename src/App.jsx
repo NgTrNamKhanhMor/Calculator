@@ -12,7 +12,7 @@ function App() {
       className="px-4 px-lg-5 py-5 text-bg-white border rounded-3 mt-3"
       style={{ maxWidth: "500px", fontSize: "0.7rem" }}
     >
-      <Display/>
+      <Display />
       <Layout />
     </Container>
   );

@@ -1,15 +1,15 @@
 // External Libraries
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 // Components
-import { buttonLayout, buttonMapping } from '~const/buttonStyleMapping';
-import { DigitButton } from '~components/Button/Button';
+import { buttonLayout, buttonMapping } from "~const/buttonStyleMapping";
+import { DigitButton } from "~components/Button/Button";
 
 export default function Layout() {
   return (
     <div>
       {buttonLayout.map((row, rowIndex) => (
-        <Row className='mt-3' key={rowIndex}>
+        <Row className="mt-3" key={rowIndex}>
           {row.map((button, colIndex) => {
             const ButtonComponent = buttonMapping[button] || DigitButton;
             return (
@@ -21,5 +21,5 @@ export default function Layout() {
         </Row>
       ))}
     </div>
-  )
+  );
 }

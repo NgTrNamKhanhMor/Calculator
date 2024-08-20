@@ -7,6 +7,7 @@ import {
 //Redux
 import { useDispatch } from "react-redux";
 import {
+  bracketInput,
   clearInput,
   equalInput,
   inputDigit,
@@ -32,6 +33,9 @@ const handleClick = (label, dispatch) => {
       case "/":
         dispatch(operandInput(label));
         break;
+    case "()":
+      dispatch(bracketInput());
+      break;
     case "=":
       dispatch(equalInput());
       break;

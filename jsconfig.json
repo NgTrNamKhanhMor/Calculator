@@ -25,6 +25,9 @@
             ],
             "~Layout/*": [
                 "src/components/Layout/*"
+            ],
+            "~ultis/*": [
+                "src/ultis/*"
             ]
         }
     }

@@ -1,35 +1,90 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Display from './components/Display/Display';
+import { StyledButtonItem } from './components/Button/Button.style';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Container className="px-4 px-lg-5 py-5 text-bg-secondary my-4 mx-auto rounded-3">
+        <Row className='px-2'>
+          <Col xs={12} className="text-bg-light text-center p-0 rounded-3" style={{height: '50px'}}>
+            <Display />
+          </Col>
+        </Row>
+        <Row className='mt-3'>
+          <Col sx={3}>
+            <StyledButtonItem>C</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>&radic;</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>x<sup>2</sup></StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>+</StyledButtonItem>
+          </Col>
+        </Row>
+        <Row>
+          <Col sx={3}>
+            <StyledButtonItem>7</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>8</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>9</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>-</StyledButtonItem>
+          </Col>
+        </Row>
+        <Row>
+          <Col sx={3}>
+            <StyledButtonItem>4</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>5</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>6</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>x</StyledButtonItem>
+          </Col>
+        </Row>
+        <Row>
+          <Col sx={3}>
+            <StyledButtonItem>1</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>2</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>3</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>/</StyledButtonItem>
+          </Col>
+        </Row>
+        <Row>
+          <Col sx={3}>
+            <StyledButtonItem>()</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>0</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>.</StyledButtonItem>
+          </Col>
+          <Col sx={3}>
+            <StyledButtonItem>=</StyledButtonItem>
+          </Col>
+        </Row>
+      </Container>
+  );
 }
 
-export default App
+export default App;

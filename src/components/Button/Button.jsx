@@ -1,7 +1,21 @@
-import { StyledButtonItem } from "./Button.style";
+import { DigitButtonItem, PrimaryButtonItem, StyledButtonItem } from "./Button.style";
 
-export default function Button({value}) {
+export default function StyledButton({ children }) {
   return (
-    <StyledButtonItem>{value}</StyledButtonItem>
+    <StyledButtonItem>{ children }</StyledButtonItem>
   )
 }
+
+export function DigitButton({ children }){
+    return (
+        <DigitButtonItem>{ children }</DigitButtonItem>
+    )
+}
+
+
+export function PrimaryButton({ children }) {  
+    return (
+        <PrimaryButtonItem>{children}</PrimaryButtonItem>  
+    );
+}
+

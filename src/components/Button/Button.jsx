@@ -1,28 +1,75 @@
 //Components
+import {
+  DigitButtonItem,
+  PrimaryButtonItem,
+  StyledButtonItem,
+} from "~components/Button/Button.style";
+//Redux
+import { useDispatch } from "react-redux";
+import {
+  bracketInput,
+  clearInput,
+  equalInput,
+  inputDigit,
+  operandInput,
+  squareInput,
+  squareRootInput,
+} from "~redux/calculatorSlice";
 
-import { DigitButtonItem, PrimaryButtonItem, StyledButtonItem } from "~components/Button/Button.style";
+const handleClick = (label, dispatch) => {
+  switch (label) {
+    case "C":
+      dispatch(clearInput());
+      break;
+    case "√":
+      dispatch(squareRootInput(label));
+      break;
+    case "x²":
+      dispatch(squareInput());
+      break;
+    case "+":
+      case "-":
+      case "x":
+      case "/":
+        dispatch(operandInput(label));
+        break;
+    case "()":
+      dispatch(bracketInput());
+      break;
+    case "=":
+      dispatch(equalInput());
+      break;
+    default:
+      dispatch(inputDigit(label));
+      break;
+  }
+};
 
+export function StyledButton({ children }) {
+  const dispatch = useDispatch();
 
-
-
-
-
-export default function StyledButton({ children }) {
   return (
-    <StyledButtonItem>{ children }</StyledButtonItem>
-  )
+    <StyledButtonItem onClick={() => handleClick(children, dispatch)}>
+      {children}
+    </StyledButtonItem>
+  );
+}
+export function DigitButton({ children }) {
+  const dispatch = useDispatch();
+
+  return (
+    <DigitButtonItem onClick={() => handleClick(children, dispatch)}>
+      {children}
+    </DigitButtonItem>
+  );
 }
 
-export function DigitButton({ children }){
-    return (
-        <DigitButtonItem>{ children }</DigitButtonItem>
-    )
+export function PrimaryButton({ children }) {
+  const dispatch = useDispatch();
+
+  return (
+    <PrimaryButtonItem onClick={() => handleClick(children, dispatch)}>
+      {children}
+    </PrimaryButtonItem>
+  );
 }
-
-
-export function PrimaryButton({ children }) {  
-    return (
-        <PrimaryButtonItem>{children}</PrimaryButtonItem>  
-    );
-}
-
